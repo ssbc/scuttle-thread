@@ -4,7 +4,7 @@ requires a server with `ssb-backlinks` plugin installed
 
 ## Examples
 
-``js
+```js
 const Scuttle = require('scuttle-thread')
 const scuttle = Scuttle(server)
 
