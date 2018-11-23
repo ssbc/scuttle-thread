@@ -1,5 +1,7 @@
 # scuttle-thread
 
+requires a server with `ssb-backlinks` plugin installed
+
 ## Examples
 
 ``js
