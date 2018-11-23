@@ -2,7 +2,7 @@
 
 ## Examples
 
-``js
+```js
 const Scuttle = require('scuttle-thread')
 const scuttle = Scuttle(server)
 
