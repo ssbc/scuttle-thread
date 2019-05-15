@@ -5,6 +5,10 @@ const { isFeed } = require('ssb-ref')
 const getBranch = require('../../lib/get-branch')
 
 module.exports = function buildVote (server) {
+  const _getBranch = server.tangle
+    ? server.tangle.branch
+    : getBranch(server)
+
   return function (msg, opts = {}, cb) {
     const vote = {
       type: 'vote',
@@ -18,7 +22,7 @@ module.exports = function buildVote (server) {
 
     if (getContent(msg).recps) vote.recps = getRecps(msg)
 
-    getBranch(server)(vote.root, (err, branch) => {
+    _getBranch(vote.root, (err, branch) => {
       if (err) return cb(err)
 
       vote.branch = branch
